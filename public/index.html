@@ -1,0 +1,1168 @@
+<!DOCTYPE html>
+<html class="js firefox" lang="ru-RU">
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="UTF-8">
+
+  <!--    <link href="calculator_files/css.css" rel="stylesheet">-->
+
+  <title>Каталог продукции</title>
+  <style type="text/css">
+    /* Light Color */
+    body #booked-profile-page input[type=submit].button-primary:hover,
+    body table.booked-calendar input[type=submit].button-primary:hover,
+    body .booked-modal input[type=submit].button-primary:hover,
+    body table.booked-calendar thead,
+    body table.booked-calendar thead th,
+    body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+    body #booked-profile-page .booked-profile-appt-list .appt-block .google-cal-button,
+    body #booked-profile-page .booked-profile-header {
+      background: #c4f2d4 !important;
+    }
+
+    body #booked-profile-page input[type=submit].button-primary:hover,
+    body table.booked-calendar input[type=submit].button-primary:hover,
+    body .booked-modal input[type=submit].button-primary:hover,
+    body table.booked-calendar th,
+    body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button:hover,
+    body #booked-profile-page .booked-profile-appt-list .appt-block .google-cal-button,
+    body #booked-profile-page .booked-profile-header {
+      border-color: #c4f2d4 !important;
+    }
+
+
+    /* Dark Color */
+    body table.booked-calendar tr.days,
+    body table.booked-calendar tr.days th,
+    body .booked-calendarSwitcher,
+    body .booked-calendarSwitcher select {
+      background: #039146 !important;
+    }
+
+    body table.booked-calendar tr.days th {
+      border-color: #039146 !important;
+    }
+
+
+    /* Primary Button Color */
+    body #booked-profile-page input[type=submit].button-primary,
+    body table.booked-calendar input[type=submit].button-primary,
+    body .booked-modal input[type=submit].button-primary,
+    body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button,
+    body #booked-profile-page .booked-profile-appt-list .appt-block.approved .status-block {
+      background: #0bbe5f;
+    }
+
+    body #booked-profile-page input[type=submit].button-primary,
+    body table.booked-calendar input[type=submit].button-primary,
+    body .booked-modal input[type=submit].button-primary,
+    body table.booked-calendar .booked-appt-list .timeslot .timeslot-people button {
+      border-color: #0bbe5f;
+    }
+    html {
+      box-sizing: border-box; }
+
+    *, *::after, *::before {
+      box-sizing: inherit; }
+
+    html {
+      box-sizing: border-box; }
+
+    *, *::after, *::before {
+      box-sizing: inherit; }
+
+    /* --------------- Reset styles --------- */
+    .panel-grid .widget {
+      overflow: initial; }
+
+    .lvca-container ol, .lvca-container ul, .lvca-container ol li, .lvca-container ul li, .lvca-container ol:hover, .lvca-container ul:hover, .lvca-container ul li:hover, .lvca-container ol li:hover, .lvca-container ol li a, .lvca-container ul li a, .lvca-container ol li a:hover, .lvca-container ul li a:hover, .lvca-container img {
+      padding: 0;
+      margin: 0;
+      border: none;
+      box-shadow: none;
+      list-style: none;
+      background: none; }
+    .lvca-container ol:before, .lvca-container ol:after, .lvca-container ul:before, .lvca-container ul:after, .lvca-container ol li:before, .lvca-container ol li:after, .lvca-container ul li:before, .lvca-container ul li:after, .lvca-container ol:hover:before, .lvca-container ol:hover:after, .lvca-container ul:hover:before, .lvca-container ul:hover:after, .lvca-container ul li:hover:before, .lvca-container ul li:hover:after, .lvca-container ol li:hover:before, .lvca-container ol li:hover:after, .lvca-container ol li a:before, .lvca-container ol li a:after, .lvca-container ul li a:before, .lvca-container ul li a:after, .lvca-container ol li a:hover:before, .lvca-container ol li a:hover:after, .lvca-container ul li a:hover:before, .lvca-container ul li a:hover:after, .lvca-container img:before, .lvca-container img:after {
+      display: none; }
+    .lvca-container a {
+      text-decoration: initial; }
+    .lvca-container img {
+      max-width: 100%; }
+
+    /* ------- General styles ------------ */
+    .lvca-container {
+      margin-left: auto;
+      margin-right: auto; }
+
+    .panel-grid .widget {
+      border: 0; }
+
+    .lvca-center {
+      text-align: center; }
+
+    .lvca-lastcol {
+      margin-right: 0; }
+
+    .lvca-container .lvca-onecol, .lvca-container .lvca-twocol, .lvca-container .lvca-onefifthcol, .lvca-container .lvca-threecol, .lvca-container .lvca-fourcol, .lvca-container .lvca-fivecol, .lvca-container .lvca-sixcol, .lvca-container .lvca-sevencol, .lvca-container .lvca-eightcol, .lvca-container .lvca-ninecol, .lvca-container .lvca-tencol, .lvca-container .lvca-elevencol {
+      min-height: 1px;
+      /* Prevents columns from collapsing when housing absolute elements or when lazy loading content */ }
+    @media only screen and (min-width: 801px) {
+      .lvca-container .lvca-onecol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 5.17241%; }
+      .lvca-container .lvca-onecol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-onecol:nth-child(12n) {
+        margin-right: 0; }
+      .lvca-container .lvca-onecol:nth-child(12n+1) {
+        clear: left; }
+      .lvca-container .lvca-twocol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 13.7931%; }
+      .lvca-container .lvca-twocol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-twocol:nth-child(6n) {
+        margin-right: 0; }
+      .lvca-container .lvca-twocol:nth-child(6n+1) {
+        clear: left; }
+      .lvca-container .lvca-threecol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 22.41379%; }
+      .lvca-container .lvca-threecol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-threecol:nth-child(4n) {
+        margin-right: 0; }
+      .lvca-container .lvca-threecol:nth-child(4n+1) {
+        clear: left; }
+      .lvca-container .lvca-fourcol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 31.03448%; }
+      .lvca-container .lvca-fourcol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-fourcol:nth-child(3n) {
+        margin-right: 0; }
+      .lvca-container .lvca-fourcol:nth-child(3n+1) {
+        clear: left; }
+      .lvca-container .lvca-fivecol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 39.65517%; }
+      .lvca-container .lvca-fivecol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-sixcol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+      .lvca-container .lvca-sixcol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-sixcol:nth-child(2n) {
+        margin-right: 0; }
+      .lvca-container .lvca-sixcol:nth-child(2n+1) {
+        clear: left; }
+      .lvca-container .lvca-sevencol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 56.89655%; }
+      .lvca-container .lvca-sevencol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-eightcol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 65.51724%; }
+      .lvca-container .lvca-eightcol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-ninecol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 74.13793%; }
+      .lvca-container .lvca-ninecol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-tencol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 82.75862%; }
+      .lvca-container .lvca-tencol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-elevencol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 91.37931%; }
+      .lvca-container .lvca-elevencol:last-child {
+        margin-right: 0; } }
+    .lvca-container .lvca-twelvecol, .lvca-container .lvca-fullwidth {
+      float: left;
+      display: block;
+      width: 100%; }
+
+    /*--------- Support for 5 column grid ----*/
+    @media only screen and (min-width: 801px) {
+      .lvca-container .lvca-onefifthcol {
+        float: left;
+        display: block;
+        margin-right: 2.73973%;
+        width: 17.80822%; }
+      .lvca-container .lvca-onefifthcol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-onefifthcol:nth-child(5n) {
+        margin-right: 0; }
+      .lvca-container .lvca-onefifthcol:nth-child(5n+1) {
+        clear: left; } }
+
+    /* Tablet and Mobile responsiveness */
+    @media only screen and (min-width: 480px) and (max-width: 800px) {
+      .lvca-container .lvca-onecol, .lvca-container .lvca-twocol, .lvca-container .lvca-onefifthcol, .lvca-container .lvca-threecol, .lvca-container .lvca-fourcol, .lvca-container .lvca-fivecol, .lvca-container .lvca-sixcol, .lvca-container .lvca-sevencol, .lvca-container .lvca-eightcol, .lvca-container .lvca-ninecol, .lvca-container .lvca-tencol, .lvca-container .lvca-elevencol {
+        float: left;
+        display: block;
+        margin-right: 3.44828%;
+        width: 48.27586%; }
+      .lvca-container .lvca-onecol:last-child, .lvca-container .lvca-twocol:last-child, .lvca-container .lvca-onefifthcol:last-child, .lvca-container .lvca-threecol:last-child, .lvca-container .lvca-fourcol:last-child, .lvca-container .lvca-fivecol:last-child, .lvca-container .lvca-sixcol:last-child, .lvca-container .lvca-sevencol:last-child, .lvca-container .lvca-eightcol:last-child, .lvca-container .lvca-ninecol:last-child, .lvca-container .lvca-tencol:last-child, .lvca-container .lvca-elevencol:last-child {
+        margin-right: 0; }
+      .lvca-container .lvca-onecol:nth-child(2n), .lvca-container .lvca-twocol:nth-child(2n), .lvca-container .lvca-onefifthcol:nth-child(2n), .lvca-container .lvca-threecol:nth-child(2n), .lvca-container .lvca-fourcol:nth-child(2n), .lvca-container .lvca-fivecol:nth-child(2n), .lvca-container .lvca-sixcol:nth-child(2n), .lvca-container .lvca-sevencol:nth-child(2n), .lvca-container .lvca-eightcol:nth-child(2n), .lvca-container .lvca-ninecol:nth-child(2n), .lvca-container .lvca-tencol:nth-child(2n), .lvca-container .lvca-elevencol:nth-child(2n) {
+        margin-right: 0; }
+      .lvca-container .lvca-onecol:nth-child(2n+1), .lvca-container .lvca-twocol:nth-child(2n+1), .lvca-container .lvca-onefifthcol:nth-child(2n+1), .lvca-container .lvca-threecol:nth-child(2n+1), .lvca-container .lvca-fourcol:nth-child(2n+1), .lvca-container .lvca-fivecol:nth-child(2n+1), .lvca-container .lvca-sixcol:nth-child(2n+1), .lvca-container .lvca-sevencol:nth-child(2n+1), .lvca-container .lvca-eightcol:nth-child(2n+1), .lvca-container .lvca-ninecol:nth-child(2n+1), .lvca-container .lvca-tencol:nth-child(2n+1), .lvca-container .lvca-elevencol:nth-child(2n+1) {
+        clear: left; } }
+    @media only screen and (max-width: 479px) {
+      .lvca-container .lvca-onecol, .lvca-container .lvca-twocol, .lvca-container .lvca-onefifthcol, .lvca-container .lvca-threecol, .lvca-container .lvca-fourcol, .lvca-container .lvca-fivecol, .lvca-container .lvca-sixcol, .lvca-container .lvca-sevencol, .lvca-container .lvca-eightcol, .lvca-container .lvca-ninecol, .lvca-container .lvca-tencol, .lvca-container .lvca-elevencol {
+        width: 100%;
+        margin-right: 0; } }
+
+    /*-------- Remove margins on last column -----*/
+    .lvca-container .lvca-lastcol {
+      margin-right: 0; }
+
+    /*--------- No margin columns ----*/
+    .lvca-container .lvca-zero-margin, #content .lvca-zero-margin {
+      margin-right: 0; }
+
+    .lvca-container .lvca-onecol.lvca-zero-margin, .lvca-container .lvca-twocol.lvca-zero-margin, .lvca-container .lvca-onefifthcol.lvca-zero-margin, .lvca-container .lvca-threecol.lvca-zero-margin, .lvca-container .lvca-fourcol.lvca-zero-margin, .lvca-container .lvca-fivecol.lvca-zero-margin, .lvca-container .lvca-sixcol.lvca-zero-margin, .lvca-container .lvca-sevencol.lvca-zero-margin, .lvca-container .lvca-eightcol.lvca-zero-margin, .lvca-container .lvca-ninecol.lvca-zero-margin, .lvca-container .lvca-tencol.lvca-zero-margin, .lvca-container .lvca-elevencol.lvca-zero-margin {
+      margin-right: 0; }
+    @media only screen and (min-width: 768px) {
+      .lvca-container .lvca-onecol.lvca-zero-margin {
+        width: 8.33333%; }
+      .lvca-container .lvca-twocol.lvca-zero-margin {
+        width: 16.66667%; }
+      .lvca-container .lvca-onefifthcol.lvca-zero-margin {
+        width: 20%; }
+      .lvca-container .lvca-threecol.lvca-zero-margin {
+        width: 25%; }
+      .lvca-container .lvca-fourcol.lvca-zero-margin {
+        width: 33.33333%; }
+      .lvca-container .lvca-fivecol.lvca-zero-margin {
+        width: 41.66667%; }
+      .lvca-container .lvca-sixcol.lvca-zero-margin {
+        width: 50%; }
+      .lvca-container .lvca-sevencol.lvca-zero-margin {
+        width: 58.33333%; }
+      .lvca-container .lvca-eightcol.lvca-zero-margin {
+        width: 66.66667%; }
+      .lvca-container .lvca-ninecol.lvca-zero-margin {
+        width: 75%; }
+      .lvca-container .lvca-tencol.lvca-zero-margin {
+        width: 83.33333%; }
+      .lvca-container .lvca-elevencol.lvca-zero-margin {
+        width: 91.66667%; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      .lvca-container .lvca-onecol.lvca-zero-margin, .lvca-container .lvca-twocol.lvca-zero-margin, .lvca-container .lvca-onefifthcol.lvca-zero-margin, .lvca-container .lvca-threecol.lvca-zero-margin, .lvca-container .lvca-fourcol.lvca-zero-margin, .lvca-container .lvca-fivecol.lvca-zero-margin, .lvca-container .lvca-sixcol.lvca-zero-margin, .lvca-container .lvca-sevencol.lvca-zero-margin, .lvca-container .lvca-eightcol.lvca-zero-margin, .lvca-container .lvca-ninecol.lvca-zero-margin, .lvca-container .lvca-tencol.lvca-zero-margin, .lvca-container .lvca-elevencol.lvca-zero-margin {
+        width: 50%; } }
+    @media only screen and (max-width: 479px) {
+      .lvca-container .lvca-onecol.lvca-zero-margin, .lvca-container .lvca-twocol.lvca-zero-margin, .lvca-container .lvca-onefifthcol.lvca-zero-margin, .lvca-container .lvca-threecol.lvca-zero-margin, .lvca-container .lvca-fourcol.lvca-zero-margin, .lvca-container .lvca-fivecol.lvca-zero-margin, .lvca-container .lvca-sixcol.lvca-zero-margin, .lvca-container .lvca-sevencol.lvca-zero-margin, .lvca-container .lvca-eightcol.lvca-zero-margin, .lvca-container .lvca-ninecol.lvca-zero-margin, .lvca-container .lvca-tencol.lvca-zero-margin, .lvca-container .lvca-elevencol.lvca-zero-margin {
+        width: 100%; } }
+
+    /* --------------- Flexslider Styles -------------- */
+    .lvca-container .lvca-flex-direction-nav li {
+      position: initial; }
+    .lvca-container .lvca-flex-direction-nav a, .lvca-container .lvca-flex-direction-nav a:hover {
+      opacity: 1;
+      text-shadow: none;
+      background: none;
+      color: #888;
+      font-family: 'lvca-icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 24px;
+      width: 28px;
+      height: 28px;
+      margin: -14px 0 0;
+      bottom: initial;
+      left: initial;
+      right: initial;
+      top: 50%;
+      text-indent: 0;
+      text-align: center;
+      color: #aaa;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s; }
+    .lvca-container .lvca-flex-direction-nav a:before, .lvca-container .lvca-flex-direction-nav a:hover:before, .lvca-container .lvca-flex-direction-nav a:hover:before, .lvca-container .lvca-flex-direction-nav a:hover:hover:before {
+      margin: 2px;
+      vertical-align: middle;
+      display: inline;
+      font-family: inherit !important;
+      opacity: 1; }
+    .lvca-container .lvca-flex-direction-nav a:hover, .lvca-container .lvca-flex-direction-nav a:hover:hover {
+      color: #888; }
+    .lvca-dark-bg .lvca-container .lvca-flex-direction-nav a, .lvca-dark-bg .lvca-container .lvca-flex-direction-nav a:hover {
+      color: #888; }
+    .lvca-dark-bg .lvca-container .lvca-flex-direction-nav a:hover, .lvca-dark-bg .lvca-container .lvca-flex-direction-nav a:hover:hover {
+      color: #aaa; }
+    @media only screen and (max-width: 960px) {
+      .lvca-container .lvca-flex-direction-nav a, .lvca-container .lvca-flex-direction-nav a:hover {
+        display: none;
+        /* Let users navigate via touch */ } }
+    .lvca-container .lvca-flex-direction-nav a.lvca-flex-prev {
+      left: -30px; }
+    .lvca-container .lvca-flex-direction-nav a.lvca-flex-prev:before {
+      content: "\e900"; }
+    .lvca-container .lvca-flex-direction-nav a.lvca-flex-next {
+      right: -30px; }
+    .lvca-container .lvca-flex-direction-nav a.lvca-flex-next:before {
+      content: "\e901"; }
+    .lvca-container .lvca-flex-control-nav {
+      width: 100%;
+      position: absolute;
+      bottom: -40px;
+      text-align: center; }
+    .lvca-container .lvca-flex-control-nav li, .lvca-container .lvca-flex-control-nav li:hover {
+      margin: 0 8px 0 0;
+      padding: 0;
+      border: none;
+      box-shadow: none; }
+    .lvca-container .lvca-flex-control-nav li a, .lvca-container .lvca-flex-control-nav li a:hover {
+      background: #aaa;
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      box-shadow: none;
+      -webkit-transition: all 0.2s ease-in 0s;
+      -moz-transition: all 0.2s ease-in 0s;
+      -ms-transition: all 0.2s ease-in 0s;
+      transition: all 0.2s ease-in 0s;
+      display: inline-block;
+      vertical-align: middle; }
+    .lvca-dark-bg .lvca-container .lvca-flex-control-nav li a, .lvca-dark-bg .lvca-container .lvca-flex-control-nav li a:hover {
+      background: #ccc;
+      border-color: #ccc; }
+    .lvca-container .lvca-flex-control-nav li a.lvca-flex-active, .lvca-container .lvca-flex-control-nav li a:hover.lvca-flex-active, .lvca-container .lvca-flex-control-nav li a:hover {
+      background: none; }
+    .lvca-container .lvca-flex-control-nav li a.lvca-flex-active, .lvca-container .lvca-flex-control-nav li a:hover.lvca-flex-active {
+      width: 14px;
+      height: 14px; }
+
+    /* Sleek Carousel Styles */
+    .slick-loading .slick-list {
+      background: #fff url("./ajax-loader.gif") center center no-repeat; }
+
+    .lvca-container button.slick-prev, .lvca-container button.slick-next {
+      position: absolute;
+      opacity: 1;
+      text-shadow: none;
+      background: none !important;
+      border: none;
+      padding: 0;
+      color: #888;
+      font-family: 'lvca-icomoon' !important;
+      speak: none;
+      font-style: normal;
+      font-weight: normal;
+      font-variant: normal;
+      text-transform: none;
+      line-height: 1;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-size: 24px;
+      width: 28px;
+      height: 28px;
+      margin: -14px 0 0;
+      bottom: initial;
+      left: initial;
+      right: initial;
+      top: 50%;
+      text-indent: 0;
+      text-align: center;
+      color: #aaa !important;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      overflow: hidden;
+      box-shadow: none; }
+    .lvca-container button.slick-prev:before, .lvca-container button.slick-next:before {
+      margin: 2px;
+      vertical-align: middle; }
+    .lvca-container button.slick-prev:hover, .lvca-container button.slick-next:hover {
+      color: #888 !important; }
+    .lvca-dark-bg .lvca-container button.slick-prev, .lvca-dark-bg .lvca-container button.slick-next {
+      color: #888 !important; }
+    .lvca-dark-bg .lvca-container button.slick-prev:hover, .lvca-dark-bg .lvca-container button.slick-next:hover {
+      color: #aaa !important;
+      background: none !important; }
+    @media only screen and (max-width: 1024px) {
+      .lvca-container button.slick-prev, .lvca-container button.slick-next {
+        display: none !important;
+        /* Let users navigate via touch */ } }
+    .lvca-container button.slick-prev {
+      left: -40px; }
+    .lvca-container button.slick-prev:before {
+      content: "\e900"; }
+    .lvca-container button.slick-next {
+      right: -40px; }
+    .lvca-container button.slick-next:before {
+      content: "\e901"; }
+    .lvca-container ul.slick-dots {
+      width: 100%;
+      position: absolute;
+      bottom: -40px;
+      text-align: center; }
+    .lvca-container ul.slick-dots li {
+      margin: 0 8px 0 0;
+      display: inline-block;
+      font-size: 0; }
+    .lvca-container ul.slick-dots li button {
+      padding: 0;
+      background: #aaa;
+      border: 1px solid #aaa;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
+      box-shadow: none;
+      -webkit-transition: all 0.3s ease-in-out 0s;
+      -moz-transition: all 0.3s ease-in-out 0s;
+      -ms-transition: all 0.3s ease-in-out 0s;
+      transition: all 0.3s ease-in-out 0s;
+      font-size: 0; }
+    .lvca-dark-bg .lvca-container ul.slick-dots li button {
+      background: #888 !important;
+      border-color: #888 !important; }
+    .lvca-container ul.slick-dots li button:hover {
+      background: none !important;
+      border-color: #aaa !important; }
+
+    /* -------- Widget separator headline ------------ */
+    .lvca-widget-heading {
+      font-size: 18px;
+      line-height: 26px;
+      letter-spacing: 1px;
+      font-weight: bold;
+      color: #333;
+      text-transform: uppercase;
+      clear: none;
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 40px;
+      line-height: 52px;
+      text-align: center; }
+    @media only screen and (max-width: 767px) {
+      .lvca-widget-heading {
+        font-size: 32px;
+        line-height: 44px; } }
+
+    /* -------- Spacer styling ----------- */
+    .lvca-spacer {
+      clear: both; }
+
+    /*# sourceMappingURL=lvca-frontend.css.map */
+
+  </style>
+
+  <link rel="stylesheet" id="accelerate_style-css" href="calculator_files/style_010.css" type="text/css" media="all">
+</head>
+
+<body class="page page-id-1682 page-template-default  wide">
+<!--META SLIDER-->
+
+<div class="top-background">
+  <div style="position:relative;">
+    <div id="slider_">
+      <ul>
+        <li><img src="calculator_files/01.jpg" alt="image description"></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div id="page" class="hfeed site">
+  <header id="masthead" class="site-header clearfix">
+
+
+    <div id="header-text-nav-container" class="clearfix">
+
+      <div class="top_Block center clearfix">
+        <div class="inner-wrap sfsdf">
+
+
+          <div id="header-text-nav-wrap" class="clearfix">
+            <div id="header-left-section">
+              <div id="header-text" class="">
+                <h1 id="site-title">
+                  <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/" title="КрымТехКаркас" rel="home">КрымТехКаркас</a>
+                </h1>
+
+              </div><!-- #header-text -->
+            </div><!-- #header-left-section -->
+            <div id="header-right-section">
+            </div><!-- #header-right-section -->
+
+          </div><!-- #header-text-nav-wrap -->
+
+        </div><!-- .inner-wrap -->
+
+        <div class="top_phone sfsdf">
+
+
+          <h3>Контакты:</h3>
+          <div class="textwidget"><span class="telfoo">Тел.: <a href="tel:+79780481254"
+                                                                style="color:white; width: 285px;">+7(978) 048-12-54</a>
+<a href="tel:+79782264746" style="color:white;width: 285px;padding-right: 48px;"><img
+        src="calculator_files/whatsapp.png" alt="" style="padding-right: 2px;" width="24px" height="24px"><img
+        src="calculator_files/viber3.png" alt="" style="padding-right: 2px;background: transparent;" width="24px"
+        height="24px">+7(978) 226-47-46</a></span>
+            <a href="mailto:89782264746@mail.ru" style="color:white;width:245px;">89782264746@mail.ru
+
+            </a><br>
+            <p style="text-align: center;margin-bottom: 3px;">Мы в соцсетях</p>
+            <div class="soc_fot">
+              <ul>
+                <li><a href="https://www.instagram.com/bytovki_crimea/" target="_blank"><img
+                        src="calculator_files/instagram.png" alt="" width="24px" height="24px"></a></li>
+                <li><a href="https://vk.com/id384637187" target="_blank"><img
+                        src="calculator_files/vk_002.png" alt="" width="24px" height="24px"></a></li>
+                <li><a href="https://www.youtube.com/channel/UC1hA_6o4V7cLt7K7YuITFmw"
+                       target="_blank"><img src="calculator_files/youtube.png" alt="" width="24px"
+                                            height="24px"></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <nav id="site-navigation" class="main-navigation inner-wrap clearfix" role="navigation">
+        <h3 class="menu-toggle">Menu</h3>
+        <div class="menu-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b5-%d0%bc%d0%b5%d0%bd%d1%8e-container">
+          <ul id="menu-%d0%b3%d0%bb%d0%b0%d0%b2%d0%bd%d0%be%d0%b5-%d0%bc%d0%b5%d0%bd%d1%8e"
+              class="menunav-menu">
+            <li id="menu-item-1199"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1199"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%be-%d0%bd%d0%b0%d1%81-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">О
+              нас</a></li>
+            <li id="menu-item-2028"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2028"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b0%d1%80%d0%b5%d0%bd%d0%b4%d0%b0-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%be%d0%ba-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5-%d0%b8-%d0%ba%d1%80%d1%8b%d0%bc%d1%83/">Аренда
+              бытовок</a></li>
+            <li id="menu-item-2767"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2767"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d1%80%d0%b0%d0%b9%d1%81/">Прайс</a></li>
+            <li id="menu-item-1490"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1490"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0/">Доставка</a>
+            </li>
+            <li id="menu-item-1618"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1618"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b8%d0%b4%d0%b5%d0%be/">Видео</a></li>
+            <li id="menu-item-1619"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1619"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/">Фотогалерея</a>
+            </li>
+            <li id="menu-item-2564"
+                class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-2564"><a
+                    href="http://xn--90acsfcjpnu1gc.xn--p1ai/category/%d1%81%d1%82%d0%b0%d1%82%d1%8c%d0%b8/">Статьи</a>
+            </li>
+            <li id="menu-item-640"
+                class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-640">
+              <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/work-process/">Контакты</a>
+              <ul class="sub-menu">
+                <li id="menu-item-868"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-868"><a
+                        href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0/">Доставка</a>
+                </li>
+                <li id="menu-item-869"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-869"><a
+                        href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8/">Строительные
+                  бытовки</a></li>
+                <li id="menu-item-870"
+                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-870">
+                  <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b/">Посты
+                    охраны</a>
+                  <ul class="sub-menu">
+                    <li id="menu-item-871"
+                        class="menu-item menu-item-type-post_type menu-item-object-page menu-item-871">
+                      <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b0%d1%80%d0%b8%d0%b0%d0%bd%d1%82%d1%8b-%d0%b2%d0%bd%d1%83%d1%82%d1%80%d0%b5%d0%bd%d0%bd%d0%b5%d0%b9-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%ba%d0%b8/">Варианты
+                        внутренней отделки</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div><!-- #header-text-nav-container -->
+
+
+  </header>
+
+
+  <div class="block__top">
+    <div class="block_top__img">
+      <img src="calculator_files/img_preview.jpg" alt="бытовки">
+    </div>
+    <div class="block_top__right">
+      <h3>Предлагаем купить бытовку от производителя по низким ценам</h3>
+      <p>Компания КрымТех Каркас предлагет добротные вместительные
+        эргономичной формы бытовки в Крыму, которые используются в различных
+        сфераъ. Они могут стать значительным подспорьем на строительной
+        площадке, строительные или дачные вагончики помогут организовать
+        полноценную офисную зону, уголок отдыха жилую или санитарную зону.</p>
+      <a class="zakaz_zvonok" href="#form">заказать звонок</a>
+      <a class="button_zakaz" href="#form">►</a>
+    </div>
+  </div>
+
+
+  <div id="main" class="clearfix">
+    <div class="inner-wrap clearfix">
+      <div id="primary">
+        <div id="content" class="clearfix">
+          <div class="leftColumn">
+            <nav id="leftMenu" class="left-menu">
+
+              <h3 class="heading menu-toggle_leftMenu leftleft">Наша продукция:</h3>
+
+              <div class="menu-left_menu-container">
+                <ul id="menu-left_menu" class="menu">
+                  <li id="menu-item-1264"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1264">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5/">Бытовки
+                      строительные</a></li>
+                  <li id="menu-item-1386"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1386">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba%d0%b8-%d0%bf%d0%be%d0%b4-%d0%ba%d0%bb%d1%8e%d1%87/">Строительные
+                      вагончики под ключ</a></li>
+                  <li id="menu-item-2758"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-2758">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d1%8f/">Модульные
+                      здания</a></li>
+                  <li id="menu-item-1256"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1256">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b0%d1%80%d0%b5%d0%bd%d0%b4%d0%b0-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%be%d0%ba-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5-%d0%b8-%d0%ba%d1%80%d1%8b%d0%bc%d1%83/">Аренда
+                      бытовок</a></li>
+                  <li id="menu-item-1257"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1257">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%82%d0%be%d1%80%d0%b3%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%be%d0%bd%d1%8b-%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%b7%d0%b0%d0%ba%d0%b0%d0%b7%d0%b0%d1%82%d1%8c/">Торговые
+                      павильоны</a></li>
+                  <li id="menu-item-1258"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1258">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82%d1%8b-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%d0%ba%d1%80%d1%8b%d0%bc/">Посты
+                      охраны</a></li>
+                  <li id="menu-item-1259"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1259">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%be%d1%84%d0%b8%d1%81%d1%8b-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">Мобильные
+                      офисы</a></li>
+                  <li id="menu-item-1391"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1391">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba-%d0%ba%d0%b0%d0%ba-%d0%ba%d0%be%d0%bc%d1%84%d0%be%d1%80%d1%82%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba/">Дачный
+                      вагончик</a></li>
+                  <li id="menu-item-1398"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1398">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba-%d0%bf%d0%be%d0%b4-%d0%ba%d0%bb%d1%8e%d1%87/">Дачный
+                      домик</a></li>
+                  <li id="menu-item-1407"
+                      class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1407">
+                    <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b8-%d0%b1%d0%bb%d0%be%d0%ba-%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%b9%d0%bd%d0%b5%d1%80%d1%8b/">Блок
+                      контейнеры</a></li>
+                </ul>
+              </div>
+
+            </nav>
+            <nav id="left_two__id" class="left-menu">
+
+              <h3 class="heading menu-toggle_leftMenu left_two">Где купить:</h3>
+              <div class="menu">
+                <ul>
+                  <li class="page_item page-item-902"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/902-2/">#902 (без названия)</a>
+                  </li>
+                  <li class="page_item page-item-1237"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b0%d1%80%d0%b5%d0%bd%d0%b4%d0%b0-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%be%d0%ba-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5-%d0%b8-%d0%ba%d1%80%d1%8b%d0%bc%d1%83/">Аренда
+                    бытовок в Симферополе и Крыму</a></li>
+                  <li class="page_item page-item-2157"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-1-5/">Бытовка
+                    строительная СБ-1-5</a></li>
+                  <li class="page_item page-item-1838"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-1-6/">Бытовка
+                    строительная СБ-1-6</a></li>
+                  <li class="page_item page-item-2194"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-1-7/">Бытовка
+                    строительная СБ-1-7</a></li>
+                  <li class="page_item page-item-2169"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-2-5/">Бытовка
+                    строительная СБ-2-5</a></li>
+                  <li class="page_item page-item-1958"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-2-6/">Бытовка
+                    строительная СБ-2-6</a></li>
+                  <li class="page_item page-item-2216"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-2-7/">Бытовка
+                    строительная СБ-2-7</a></li>
+                  <li class="page_item page-item-2178"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-3-5/">Бытовка
+                    строительная СБ-3-5</a></li>
+                  <li class="page_item page-item-2056"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-3-6/">Бытовка
+                    строительная СБ-3-6</a></li>
+                  <li class="page_item page-item-2219"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d1%81%d0%b1-3-7/">Бытовка
+                    строительная СБ-3-7</a></li>
+                  <li class="page_item page-item-1449"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d0%b0%d0%bb%d1%83%d1%88%d1%82%d0%b5/">Бытовки
+                    в Алуште</a></li>
+                  <li class="page_item page-item-1192 page_item_has_children"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d0%ba%d1%80%d1%8b%d0%bc%d1%83-%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d1%8f-%d0%ba%d1%80%d1%8b%d0%bc%d1%82%d0%b5%d1%85%d0%ba%d0%b0%d1%80%d0%ba/">Бытовки
+                    в Крыму – компания КрымТехКаркас</a>
+                    <ul class="children">
+                      <li class="page_item page-item-1376"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d0%ba%d1%80%d1%8b%d0%bc%d1%83-%d0%ba%d0%be%d0%bc%d0%bf%d0%b0%d0%bd%d0%b8%d1%8f-%d0%ba%d1%80%d1%8b%d0%bc%d1%82%d0%b5%d1%85%d0%ba%d0%b0%d1%80%d0%ba/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%be%d1%82-%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be%d0%b4%d0%b8%d1%82%d0%b5%d0%bb%d1%8f/">Бытовки
+                        от производителя – легкие и компактные</a></li>
+                    </ul>
+                  </li>
+                  <li class="page_item page-item-1410"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d1%81%d0%b5%d0%b2%d0%b0%d1%81%d1%82%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">Бытовки
+                    в Севастополе</a></li>
+                  <li class="page_item page-item-1429"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d1%8f%d0%bb%d1%82%d0%b5/">Бытовки
+                    в Ялте</a></li>
+                  <li class="page_item page-item-1209"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b5/">Бытовки
+                    дачные</a></li>
+                  <li class="page_item page-item-1469"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b4%d0%b6%d0%b0%d0%bd%d0%ba%d0%be%d0%b9/">Бытовки
+                    Джанкой</a></li>
+                  <li class="page_item page-item-1459"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b5%d0%b2%d0%bf%d0%b0%d1%82%d0%be%d1%80%d0%b8%d1%8f/">Бытовки
+                    Евпатория</a></li>
+                  <li class="page_item page-item-1403"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b8-%d0%b1%d0%bb%d0%be%d0%ba-%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%b9%d0%bd%d0%b5%d1%80%d1%8b/">Бытовки
+                    и блок контейнеры – идеальное «временное» решение</a></li>
+                  <li class="page_item page-item-1454"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1454-2/">Бытовки Керчь</a></li>
+                  <li class="page_item page-item-1206"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5/">Бытовки
+                    строительные</a></li>
+                  <li class="page_item page-item-1464"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1464-2/">Бытовки Феодосия</a></li>
+                  <li class="page_item page-item-1202"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0/">Вагончик
+                    бытовка</a></li>
+                  <li class="page_item page-item-1587"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0-%d0%bb%d1%83%d1%87%d1%88%d0%b5%d0%b5-%d0%b2%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d0%bd%d0%be%d0%b5-%d0%bf%d1%80/">Вагончик
+                    бытовка – лучшее временное пристанище</a></li>
+                  <li class="page_item page-item-1415"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba-%d0%b2-%d1%81%d0%b5%d0%b2%d0%b0%d1%81%d1%82%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">Вагончик
+                    в Севастополе</a></li>
+                  <li class="page_item page-item-1432"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1432-2/">Вагончики Ялта</a></li>
+                  <li class="page_item page-item-1616"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b8%d0%b4%d0%b5%d0%be/">Видео</a>
+                  </li>
+                  <li class="page_item page-item-1217"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b3%d0%b4%d0%b5-%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b5-%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba%d0%b8-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be/">Где
+                    купить дачные вагончики в Симферополе по низким ценам</a></li>
+                  <li class="page_item page-item-610"><a href="http://xn--90acsfcjpnu1gc.xn--p1ai/">Главная</a>
+                  </li>
+                  <li class="page_item page-item-1567"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b5-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2%d1%80%d0%b5%d0%bc%d0%b5%d0%bd%d0%bd%d0%be%d0%b5-%d0%b8%d0%bb%d0%b8-%d0%bf%d0%be%d1%81%d1%82%d0%be%d1%8f%d0%bd/">Дачные
+                    бытовки – временное или постоянное жилье</a></li>
+                  <li class="page_item page-item-1583"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1583-2/">Дачные домики – живите на
+                    даче в свое удовольствие</a></li>
+                  <li class="page_item page-item-1423"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b5-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba%d0%b8-%d1%81%d0%b5%d0%b2%d0%b0%d1%81%d1%82%d0%be%d0%bf%d0%be%d0%bb%d1%8c/">Дачные
+                    домики Севастополь</a></li>
+                  <li class="page_item page-item-1439"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1439-2/">Дачные домики Ялта</a>
+                  </li>
+                  <li class="page_item page-item-1387"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba-%d0%ba%d0%b0%d0%ba-%d0%ba%d0%be%d0%bc%d1%84%d0%be%d1%80%d1%82%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba/">Дачный
+                    вагончик как комфортный домик</a></li>
+                  <li class="page_item page-item-1393"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba-%d0%bf%d0%be%d0%b4-%d0%ba%d0%bb%d1%8e%d1%87/">Дачный
+                    домик под ключ</a></li>
+                  <li class="page_item page-item-1565"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%be%d0%ba-%d0%bf%d0%be-%d0%ba%d1%80%d1%8b%d0%bc%d1%83/">Доставка
+                    бытовок по Крыму</a></li>
+                  <li class="page_item page-item-1795"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b7%d0%b0%d0%ba%d0%b0%d0%b7%d0%b0%d1%82%d1%8c-%d0%b7%d0%b2%d0%be%d0%bd%d0%be%d0%ba/">Заказать
+                    звонок</a></li>
+                  <li class="page_item page-item-1682 current_page_item"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3-%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%86%d0%b8%d0%b8/">Каталог
+                    продукции</a></li>
+                  <li class="page_item page-item-192"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/work-process/">Контакты</a></li>
+                  <li class="page_item page-item-1224"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1224-2/">Купить блок-контейнеры в
+                    Симферополе и Крыму</a></li>
+                  <li class="page_item page-item-1227"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba/">Купить
+                    дачный домик в Симферополе и Крыму</a></li>
+                  <li class="page_item page-item-1443"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%be%d1%84%d0%b8%d1%81%d1%8b-%d0%be%d1%82-%d0%ba%d1%80%d1%8b%d0%bc%d1%81%d0%ba%d0%be%d0%b3%d0%be-%d0%bf%d1%80%d0%be%d0%b8%d0%b7%d0%b2%d0%be/">Купить
+                    мобильные офисы в городах Крыма</a></li>
+                  <li class="page_item page-item-1230"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%be%d1%84%d0%b8%d1%81%d1%8b-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">Купить
+                    мобильные офисы в Симферополе и Крыму</a></li>
+                  <li class="page_item page-item-1221"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1221-2/">Купить строительный
+                    вагончик в Симферополе</a></li>
+                  <li class="page_item page-item-1591"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b1%d0%b8%d0%bb%d1%8c%d0%bd%d1%8b%d0%b9-%d0%b1%d1%8b%d1%81%d1%82%d1%80%d0%be%d0%b2%d0%be%d0%b7%d0%b2%d0%be%d0%b4%d0%b8%d0%bc%d1%8b%d0%b9-%d0%be%d1%84%d0%b8%d1%81/">Мобильный
+                    быстровозводимый офис</a></li>
+                  <li class="page_item page-item-2799"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d0%be%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5-%e2%84%961/">Модульное
+                    здание №1</a></li>
+                  <li class="page_item page-item-2803"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d0%be%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5-%e2%84%962/">Модульное
+                    здание №2</a></li>
+                  <li class="page_item page-item-2805"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d0%be%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5-%e2%84%963/">Модульное
+                    здание №3</a></li>
+                  <li class="page_item page-item-2807"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d0%be%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d0%b5-%e2%84%964/">Модульное
+                    здание №4</a></li>
+                  <li class="page_item page-item-2751"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b7%d0%b4%d0%b0%d0%bd%d0%b8%d1%8f/">Модульные
+                    здания</a></li>
+                  <li class="page_item page-item-1194"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%be-%d0%bd%d0%b0%d1%81-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b2-%d1%81%d0%b8%d0%bc%d1%84%d0%b5%d1%80%d0%be%d0%bf%d0%be%d0%bb%d0%b5/">О
+                    нас</a></li>
+                  <li class="page_item page-item-1399"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d0%bf%d1%83%d0%bb%d1%8f%d1%80%d0%bd%d0%be%d1%81%d1%82%d1%8c-%d0%b1%d0%bb%d0%be%d0%ba-%d0%ba%d0%be%d0%bd%d1%82%d0%b5%d0%b9%d0%bd%d0%b5%d1%80%d0%be%d0%b2-%d1%80%d0%b0%d1%81%d1%82%d0%b5/">Популярность
+                    блок контейнеров растет</a></li>
+                  <li class="page_item page-item-1589"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1589-2/">Пост охраны – эффективная
+                    организация охраны объекта</a></li>
+                  <li class="page_item page-item-2782"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%e2%84%961/">Пост
+                    охраны №1</a></li>
+                  <li class="page_item page-item-2791"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%e2%84%962/">Пост
+                    охраны №2</a></li>
+                  <li class="page_item page-item-2794"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%e2%84%963/">Пост
+                    охраны №3</a></li>
+                  <li class="page_item page-item-2796"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%e2%84%964/">Пост
+                    охраны №4</a></li>
+                  <li class="page_item page-item-1233"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82%d1%8b-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b-%d0%ba%d1%80%d1%8b%d0%bc/">Посты
+                    охраны (Крым)</a></li>
+                  <li class="page_item page-item-2761"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d1%80%d0%b0%d0%b9%d1%81/">Прайс</a>
+                  </li>
+                  <li class="page_item page-item-2231"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d1%80%d0%b0%d0%b9%d1%81-%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%86%d0%b8%d0%b8-%d0%ba%d1%80%d1%8b%d0%bc%d1%82%d0%b5%d1%85%d0%ba%d0%b0%d1%80%d0%ba%d0%b0%d1%81/">Прайс
+                    продукции “Крымтехкаркас”</a></li>
+                  <li class="page_item page-item-1569"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8-%d0%b1%d1%8b%d1%81%d1%82%d1%80%d0%be%d0%b2%d0%be%d0%b7%d0%b2%d0%be%d0%b4%d0%b8/">Строительные
+                    бытовки – быстровозводимые утилитарные сооружения</a></li>
+                  <li class="page_item page-item-1573"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/1573-2/">Строительные вагончики –
+                    выгодно для застройщиков</a></li>
+                  <li class="page_item page-item-1383"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b2%d0%b0%d0%b3%d0%be%d0%bd%d1%87%d0%b8%d0%ba%d0%b8-%d0%bf%d0%be%d0%b4-%d0%ba%d0%bb%d1%8e%d1%87/">Строительные
+                    вагончики под ключ</a></li>
+                  <li class="page_item page-item-2098"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%82%d0%b5%d1%81%d1%82/">Тест</a>
+                  </li>
+                  <li class="page_item page-item-1235"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%82%d0%be%d1%80%d0%b3%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%be%d0%bd%d1%8b-%d0%ba%d1%83%d0%bf%d0%b8%d1%82%d1%8c-%d0%b7%d0%b0%d0%ba%d0%b0%d0%b7%d0%b0%d1%82%d1%8c/">Торговые
+                    павильоны – купить, заказать</a></li>
+                  <li class="page_item page-item-873"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d0%b0%d1%8f-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b0/">Строительная
+                    бытовка</a></li>
+                  <li class="page_item page-item-637"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8/">Строительные
+                    бытовки</a></li>
+                  <li class="page_item page-item-875"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b9-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba/">Дачные
+                    домики</a></li>
+                  <li class="page_item page-item-836"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%bf%d0%be%d1%81%d1%82-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b/">Посты
+                    охраны</a></li>
+                  <li class="page_item page-item-632"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b2%d0%b0%d1%80%d0%b8%d0%b0%d0%bd%d1%82%d1%8b-%d0%b2%d0%bd%d1%83%d1%82%d1%80%d0%b5%d0%bd%d0%bd%d0%b5%d0%b9-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%ba%d0%b8/">Варианты
+                    внутренней отделки</a></li>
+                  <li class="page_item page-item-697 page_item_has_children"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/"
+                          title="1">Фотогалерея</a>
+                    <ul class="children">
+                      <li class="page_item page-item-2650"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d0%b2%d0%bd%d1%83%d1%82%d1%80%d0%b5%d0%bd%d0%bd%d1%8f%d1%8f-%d0%be%d1%82%d0%b4%d0%b5%d0%bb%d0%ba%d0%b0/">Внутренняя
+                        отделка</a></li>
+                      <li class="page_item page-item-2451"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d0%b4%d0%b0%d1%87%d0%bd%d1%8b%d0%b5-%d0%b4%d0%be%d0%bc%d0%b8%d0%ba%d0%b8/">Дачные
+                        домики</a></li>
+                      <li class="page_item page-item-2453"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d0%b6%d0%b8%d0%bb%d1%8b%d0%b5-%d0%bc%d0%be%d0%b4%d1%83%d0%bb%d0%b8/">Жилые
+                        модули</a></li>
+                      <li class="page_item page-item-2455"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d0%bf%d0%be%d1%81%d1%82%d1%8b-%d0%be%d1%85%d1%80%d0%b0%d0%bd%d1%8b/">Посты
+                        охраны</a></li>
+                      <li class="page_item page-item-2434"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d1%81%d1%82%d1%80%d0%be%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d0%bd%d1%8b%d0%b5-%d0%b1%d1%8b%d1%82%d0%be%d0%b2%d0%ba%d0%b8/">Строительные
+                        бытовки</a></li>
+                      <li class="page_item page-item-2457"><a
+                              href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%84%d0%be%d1%82%d0%be%d0%b3%d0%b0%d0%bb%d0%b5%d1%80%d0%b5%d1%8f/%d1%82%d0%be%d1%80%d0%b3%d0%be%d0%b2%d1%8b%d0%b5-%d0%bf%d0%b0%d0%b2%d0%b8%d0%bb%d1%8c%d0%be%d0%bd%d1%8b/">Торговые
+                        павильоны</a></li>
+                    </ul>
+                  </li>
+                  <li class="page_item page-item-689"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d0%b4%d0%be%d1%81%d1%82%d0%b0%d0%b2%d0%ba%d0%b0/">Доставка</a>
+                  </li>
+                  <li class="page_item page-item-693"><a
+                          href="http://xn--90acsfcjpnu1gc.xn--p1ai/%d1%83%d1%81%d0%bb%d1%83%d0%b3%d0%b8-%d1%81%d0%bf%d0%b5%d1%86%d1%82%d0%b5%d1%85%d0%bd%d0%b8%d0%ba%d0%b8/">Спецтехника</a>
+                  </li>
+                </ul>
+              </div>
+
+
+            </nav>
+            <div class="videos__left">
+
+              <h3 class="videos__left__h3">Видео нашей продукции:</h3>
+
+              <div class="block">
+                <p>Блок-контейнер 6х2,4м</p>
+                <div class="plaerLeft" onclick="showVideo('BENOBxqefW8')">
+                  <img src="calculator_files/7.png" alt="Блок-контейнер 6х2,4м КРЫМТЕХКАРКАС"></div>
+              </div>
+
+              <div class="block">
+                <p>Штаб строительства</p>
+                <div class="plaerLeft" onclick="showVideo('_XymaB2G_Lw')">
+                  <img src="calculator_files/1.png" alt="Штаб строительства (бытовой модуль 6х12м)">
+                </div>
+              </div>
+
+              <div class="block">
+                <p>Готовый дом для постоянного проживания</p>
+                <div class="plaerLeft" onclick="showVideo('ncf0A4TrQLE')">
+                  <img src="calculator_files/3.png"
+                       alt="Готовый дом для постоянного проживания 6х9,6м за один день"></div>
+              </div>
+
+              <div class="block">
+                <p>Бытовка металлическая с двумя окнами</p>
+                <div class="plaerLeft" onclick="showVideo('rjYTKazlxqA')">
+                  <img src="calculator_files/12.png"
+                       alt="Бытовка металлическая 6000х2400х2500мм с двумя окнами"></div>
+              </div>
+
+              <div class="block">
+                <p>Внутренняя отделка бытовки-дачного домика</p>
+                <div class="plaerLeft" onclick="showVideo('W1LoP_IK5mI')">
+                  <img src="calculator_files/13.png"
+                       alt="Внутренняя отделка бытовки-дачного домика 7000*2400мм"></div>
+              </div>
+
+              <div class="block">
+                <p>Пост охраны</p>
+                <div class="plaerLeft" onclick="showVideo('pJoj8xPCda4')">
+                  <img src="calculator_files/14.png" alt="Пост охраны 2000х2000мм"></div>
+              </div>
+
+              <div class="block">
+                <p>Модуль жилой</p>
+                <div class="plaerLeft" onclick="showVideo('i6TObn007q0')">
+                  <img src="calculator_files/15.png" alt="Модуль жилой 6000х7200х2500м."></div>
+              </div>
+
+              <div class="socLike">
+
+                <noindex>
+
+                  <script type="text/javascript" src="calculator_files/plusone.js" rel="nowfollow"
+                          gapi_processed="true">
+                    {
+                      lang: 'ru'
+                    }
+                  </script>
+
+                  <div class="sots_d">
+                    <div style="position: absolute; width: 450px; left: -10000px;"
+                         id="___plusone_0">
+                      <iframe ng-non-bindable="" hspace="0" marginheight="0" marginwidth="0"
+                              scrolling="no"
+                              style="position:absolute;top:-10000px;width:450px;margin:0px;border-style:none"
+                              tabindex="0" vspace="0" id="I0_1580659870699"
+                              name="I0_1580659870699" src="calculator_files/fastbutton.htm"
+                              data-gapiattached="true" width="100%" frameborder="0"></iframe>
+                    </div>
+                    <div class="g-plusone" data-size="tall" data-annotation="inline"
+                         data-width="150" data-gapiscan="true" data-onload="true"
+                         data-gapistub="true"></div>
+                  </div>
+
+                  <div class="sots_d">
+                    <iframe id="twitter-widget-0" scrolling="no" allowtransparency="true"
+                            allowfullscreen="true"
+                            class="twitter-share-button twitter-share-button-rendered twitter-tweet-button"
+                            style="position: static; visibility: visible; width: 80px; height: 20px;"
+                            title="Twitter Tweet Button" src="calculator_files/tweet_button.htm"
+                            frameborder="0"></iframe>
+                    <script>!function (d, s, id) {
+                      var js, fjs = d.getElementsByTagName(s)[0];
+                      if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = "//platform.twitter.com/widgets.js";
+                        fjs.parentNode.insertBefore(js, fjs);
+                      }
+                    }(document, "script", "twitter-wjs");</script>
+                  </div>
+
+
+                </noindex>
+
+              </div>
+            </div>
+          </div>
+          <div style="display:none" id="videoPleer"></div>
+          <div style="display:none" id="closeVideo" onclick="closeVideo()"><img
+                  src="calculator_files/CloseVideo.png"></div>
+          <script>
+            function showVideo(link) {
+            }
+            function closeVideo() {
+            }
+          </script>
+
+          <div class="showPhoneButton" id="showPhoneButton" onclick="showPhoneForm()">
+            <span>Заказать звонок</span></div>
+          <script>
+            function showPhoneForm() {
+            }
+          </script>
+
+
+
+          <div class="rightColumn">
+            <div id="canvas"></div>
+
+          </div><!-- #content -->
+        </div><!-- #primary -->
+        <div id="secondary">
+
+
+          <aside id="search" class="widget widget_search">
+            <form action="http://xn--90acsfcjpnu1gc.xn--p1ai/" id="search-form" class="searchform clearfix"
+                  method="get">
+              <input type="text" placeholder="Search" class="s field" name="s">
+              <input type="submit" value="Search" id="search-submit" name="submit" class="submit">
+            </form><!-- .searchform -->            </aside>
+
+          <aside id="archives" class="widget">
+            <h3 class="widget-title"><span>Archives</span></h3>
+            <ul>
+              <li><a href="http://xn--90acsfcjpnu1gc.xn--p1ai/2019/01/">Январь 2019</a></li>
+              <li><a href="http://xn--90acsfcjpnu1gc.xn--p1ai/2018/06/">Июнь 2018</a></li>
+              <li><a href="http://xn--90acsfcjpnu1gc.xn--p1ai/2017/01/">Январь 2017</a></li>
+            </ul>
+          </aside>
+
+          <aside id="meta" class="widget">
+            <h3 class="widget-title"><span>Meta</span></h3>
+            <ul>
+              <li><a href="http://xn--90acsfcjpnu1gc.xn--p1ai/wp-login.php">Войти</a></li>
+            </ul>
+          </aside>
+        </div>
+      </div><!-- .inner-wrap -->
+    </div><!-- #main -->
+  </div><!-- #page -->
+
+
+  <footer id="colophon" class="clearfix col-md-10 col-sm-10">
+    <div class="wrap_footer">
+      <div class="hfeed">
+        <div class="footer-socket-wrapper clearfix">
+          <div class="inner-wrap">
+
+            <div class="footer_phone">
+									<span class="telfoo">Тел.:
+<a href="tel:+79780481254" style="color:white;">+7(978) 048-12-54</a>
+<a href="tel:+79782264746" style="color:white;">+7 (978) 226-47-46
+	<img class="" src="calculator_files/Viber_small.png" alt="Viber_small" width="17" height="17">
+	</a>
+</span>
+              <br>
+              <span class="rejfoo">Режим работы:<br> без выходных<br> с 8-00 до 23-00</span>
+              <span class="mailfoo">Email:<br>
+	<a href="mailto:89782264746@mail.ru" style="color:white;width:235px;">89782264746@mail.ru
+
+</a>
+</span>
+              <div class="socfoo">
+                <a href="https://www.instagram.com/bytovki_crimea/" target="_blank"><img
+                        src="calculator_files/inst.png"></a>
+                <a href="https://vk.com/id384637187" target="_blank"><img src="calculator_files/vk.png"></a>
+                <a href="https://www.youtube.com/channel/UC1hA_6o4V7cLt7K7YuITFmw" target="_blank"><img
+                        src="calculator_files/yot.jpg"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap_footer2">
+      <div class="hfeed">
+        <div class="footer__bottom hfeed">
+          <div class="footer-socket-area aaa">
+            <div class="copyright">Copyright © 2020 <a href="http://xn--90acsfcjpnu1gc.xn--p1ai/"
+                                                       title="КрымТехКаркас"><span>КрымТехКаркас</span></a>.
+            </div>
+          </div>
+          <div class="autor col-sm-3 col-xs-6">
+            <a title="Поддержка сайтов" href="http://goldenstudio.ru/" target="_blank"
+               class="autor autor_art_web">
+              Поддержка сайтов
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <link rel="stylesheet" id="metaslider-flex-slider-css" href="calculator_files/flexslider.css" type="text/css"
+        media="all" property="stylesheet">
+  <link rel="stylesheet" id="metaslider-public-css" href="calculator_files/public.css" type="text/css" media="all"
+        property="stylesheet">
+
+  <!-- NETROX SC CODE. Theme No. 1
+  <script async type="text/javascript" src="//c.netrox.sc/FB3992DF-043D-59E4-1DDF-D8C668BB830E/c.js?tmpl=1"></script>-->
+</body>
+</html>
